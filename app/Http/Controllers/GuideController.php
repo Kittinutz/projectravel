@@ -10,8 +10,8 @@ class GuideController extends Controller
 {
 
     public  function index(){
-    	$guide = Trip::with(['guide'])->with(['schedules'])->get();
+    	
     
-    	return $guide;
+    	return Trip::with(['guide','schedules'])->orderBy('id','desc')->get();
     }
 }
