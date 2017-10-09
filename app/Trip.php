@@ -13,6 +13,6 @@ class Trip extends Model
     }
     public function guide()
     {
-        return $this->belongsTo(Guidemember::class);
+        return $this->belongsTo('App\Guidemember','creater_id');
     }
 }

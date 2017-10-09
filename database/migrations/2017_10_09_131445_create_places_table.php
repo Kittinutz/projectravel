@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuidemembersTable extends Migration
+class CreatePlacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,11 @@ class CreateGuidemembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('guidemembers', function (Blueprint $table) {
+        Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('tel');
-            $table->text('address');
-            $table->string('id_guide');
-            $table->string('password');
+            $table->string('name_place');
             $table->timestamps();
-
         });
-
-
     }
 
     /**
@@ -35,6 +27,6 @@ class CreateGuidemembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guidemembers');
+        Schema::dropIfExists('places');
     }
 }

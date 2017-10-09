@@ -9,7 +9,7 @@ class Guidemember extends Model
      public $timestamps = false;
 
      public function trips(){
-     	return $this->hasMany('App\Trip','guide_id');
+     	return $this->hasMany(Trip::class);
      }
       protected $hidden = ['password'];
 }
